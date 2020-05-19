@@ -11,3 +11,5 @@ thymeleaf-spring5
 javax.servlet-api
 java-configuration of web.xml and spring configuration
 ```
+
+### $> mvn clean package tomcat7:run
