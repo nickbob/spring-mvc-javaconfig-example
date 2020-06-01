@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -13,13 +14,15 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("ru.nickbob")
 @EnableWebMvc
-public class SpringConfig implements WebMvcConfigurer {
-    private final ApplicationContext applicationContext;
+@ComponentScan("ru.nickbob")
+@PropertySource("classpath:app.prop")
+public class AppConfig implements WebMvcConfigurer {
+
+    private ApplicationContext applicationContext;
 
     @Autowired
-    public SpringConfig(ApplicationContext applicationContext) {
+    public AppConfig(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 
@@ -46,4 +49,5 @@ public class SpringConfig implements WebMvcConfigurer {
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
     }
+
 }
