@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <title>app-template</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+
+<body>
+    <div th:fragment="app_header" class="header">
+        <a th:href="@{/index}">Home</a> | <a th:href="@{/users}">Users</a> | <a th:href="@{/signon}">Create user</a>
+    </div>
+
+    <div th:fragment="users_list" class="main-content">
+        <table border="1">
+            <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+            </tr>
+            <tr th:each="user : ${crew}">
+                <td th:utext="${user.FirstName}">...</td>
+                <td th:utext="${user.SecondName}">...</td>
+            </tr>
+        </table>
+    </div>
+
+    <div th:fragment="add_new_user" class="main-content">
+        <br>
+        <form th:action="@{/signon}" th:object="${addUser}" method="POST">
+        First Name:
+        <input type="text" th:field="*{FirstName}" />
+        <br>
+        Second Name:
+        <input type="text" th:field="*{SecondName}" />
+        <br>
+        <input type="submit" value="Create" />
+        </form>
+        <br>
+    </div>
+
+
+    <footer>
+        &copy nickbob 2020
+    </footer>
+</body>
+
+</html>

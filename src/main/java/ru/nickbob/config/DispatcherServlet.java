@@ -12,14 +12,12 @@ public class DispatcherServlet extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        // TODO Auto-generated method stub
         return new Class[] {AppConfig.class};
     }
 
     @Override
     protected String[] getServletMappings() {
-        // TODO Auto-generated method stub
         return new String[] {"/"};
     }
-
+    
 }

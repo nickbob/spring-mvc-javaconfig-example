@@ -3,24 +3,16 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Users</title>
+    <title>welcome</title>
+    <th:block th:insert="~{app-template :: link}"></th:block>
 </head>
 
 <body>
-    <h1>User list:</h1>
-    <table border="1">
-        <tr>
-            <th>Fist Name</th>
-            <th>Second Name</th>
-        </tr>
-        <tr th:each="user : ${crew}">
-            <td th:utext="${user.FirstName}">...</td>
-            <td th:utext="${user.SecondName}">...</td>
-        </tr>
-    </table>
+    <div th:replace="~{app-template :: app_header}"></div>
 
-    <br>
-    <a th:href="@{/signon}">Create new user</a>
+    <div th:replace="~{app-template :: users_list}"></div>
+
+    <div th:replace="~{app-template :: footer}"></div>
 </body>
 
 </html>

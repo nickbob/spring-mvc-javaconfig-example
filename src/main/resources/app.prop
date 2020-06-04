@@ -1,2 +1,2 @@
-create.user.error=fill the fields
-welcome.message=Shout out to Spring MVC + thymeleaf
+welcome=Shout out to Spring MVC + Thymeleaf
+create.user.error=Fill all fields

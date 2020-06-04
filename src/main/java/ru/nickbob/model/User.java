@@ -24,5 +24,6 @@ public class User {
         FirstName = firstName;
         SecondName = secondName;
     }
+
     public User() {}
 }

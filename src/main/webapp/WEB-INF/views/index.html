@@ -4,13 +4,20 @@
 <head>
     <meta charset="utf-8" />
     <title>welcome</title>
+    <th:block th:insert="~{app-template :: link}"></th:block>
 </head>
 
 <body>
-    <h1>Welcome</h1>
-    <p th:utext="${welcome}">...</p>
-    <br>
-    <a th:href="@{/users}">List of Users</a>
+    <div th:replace="~{app-template :: app_header}"></div>
+
+    <div class="main-content">
+        <br>
+        <h1>welcome</h1>
+        <p th:utext="${welcome}">...</p>
+        <br>
+    </div>
+
+    <div th:replace="~{app-template :: footer}">...</div>
 </body>
 
 </html>

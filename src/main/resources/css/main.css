@@ -1,0 +1,21 @@
+.header {
+    font-family: Consolas,monaco,monospace;
+    padding: 20px 20px 0;
+    height: 40px;
+    background: #e1e1e1
+}
+
+.main-content {
+    height: 60vh;
+    padding: 20px;
+}
+
+footer {
+    background: #666;
+    padding: 20px 10px;
+    color: white
+}
+
+a {
+    color: #00aaff;
+}

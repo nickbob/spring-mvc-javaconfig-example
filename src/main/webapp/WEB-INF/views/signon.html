@@ -3,26 +3,16 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Add user</title>
+    <title>welcome</title>
+    <th:block th:insert="~{app-template :: link}"></th:block>
 </head>
 
 <body>
-    <h1>Add user:</h1>
-    <br><br>
-    <form th:action="@{/signon}" th:object="${addUser}" method="POST">
-        First name:
-        <input type="text" th:field="*{FirstName}" />
-        <br>
-        Second name:
-        <input type="text" th:field="*{SecondName}" />
-        <br>
-        <input type="submit" value="Create" />
-    </form>
-    <br>
-    <div th:if="${createUserError}" th:utext="${createUserError}" style="color: red; font-style: italic">...
-    </div>
-    <br>
-    <a th:href="@{/users}">List of Users</a>
+    <div th:replace="~{app-template :: app_header}"></div>
+
+    <div th:replace="~{app-template :: add_new_user}"></div>
+
+    <div th:replace="~{app-template :: footer}"></div>
 </body>
 
 </html>

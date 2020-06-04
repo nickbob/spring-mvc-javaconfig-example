@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ru.nickbob</groupId>
-  <artifactId>leaf</artifactId>
+  <artifactId>mmm</artifactId>
   <version>1</version>
   <packaging>war</packaging>
 
-  <name>leaf Maven Webapp</name>
+  <name>mmm Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -61,7 +61,7 @@
   </dependencies>
 
   <build>
-    <finalName>leaf</finalName>
+    <finalName>mmm</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -69,7 +69,7 @@
           <artifactId>tomcat7-maven-plugin</artifactId>
           <version>2.2</version>
           <configuration>
-            <server>mytom</server>
+            <server>tommy</server>
             <path>/</path>
           </configuration>
         </plugin>
