@@ -1,4 +1,4 @@
-# The skeleton of Spring MVC Aplication
+# The skeleton of Spring MVC + Thymeleas Aplication
 
 ### Spring modules 
 
