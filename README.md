@@ -40,3 +40,33 @@ src/main/java/ru/nickbob/config/DispatcherServlet.java - Java configuration of w
 ```
 $> mvn clean compile package tomcat7:run
 ```
+
+
+### Structure of project
+
+├── README.md
+├── pom.xml
+└── src
+    └── main
+        ├── java
+        │   └── ru
+        │       └── nickbob
+        │           ├── config
+        │           │   ├── AppConfig.java
+        │           │   └── DispatcherServlet.java
+        │           ├── controller
+        │           │   └── Index.java
+        │           └── model
+        │               ├── AddUser.java
+        │               └── User.java
+        ├── resources
+        │   ├── app.prop
+        │   └── css
+        │       └── main.css
+        └── webapp
+            └── WEB-INF
+                └── views
+                    ├── app-template.html
+                    ├── index.html
+                    ├── signon.html
+                    └── users.html
