@@ -3,16 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>welcome</title>
+    <title>create_user</title>
     <th:block th:insert="~{app-template :: link}"></th:block>
 </head>
 
 <body>
-    <div th:replace="~{app-template :: app_header}"></div>
+    <div class="wrapper">
+        <div th:replace="~{app-template :: app_header}"></div>
+        <div th:replace="~{app-template :: user_create}"></div>
+        <footer th:replace="~{app-template :: footer}"></footer>
+    </div>
 
-    <div th:replace="~{app-template :: add_new_user}"></div>
-
-    <div th:replace="~{app-template :: footer}"></div>
 </body>
 
 </html>

@@ -19,6 +19,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @ComponentScan("ru.nickbob")
 @PropertySource("classpath:app.prop")
 public class AppConfig implements WebMvcConfigurer {
+
     private ApplicationContext applicationContext;
 
     @Autowired
@@ -55,5 +56,4 @@ public class AppConfig implements WebMvcConfigurer {
         registry.viewResolver(resolver);
     }
 
-    
 }

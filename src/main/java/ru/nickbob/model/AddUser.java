@@ -1,23 +1,23 @@
 package ru.nickbob.model;
 
 public class AddUser {
-    private String FirstName;
-    private String SecondName;
+    private String Fname;
+    private String Sname;
 
-    public String getFirstName() {
-        return FirstName;
+    public String getFname() {
+        return Fname;
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setFname(String fname) {
+        Fname = fname;
     }
 
-    public String getSecondName() {
-        return SecondName;
+    public String getSname() {
+        return Sname;
     }
 
-    public void setSecondName(String secondName) {
-        SecondName = secondName;
+    public void setSname(String sname) {
+        Sname = sname;
     }
-    
+
 }

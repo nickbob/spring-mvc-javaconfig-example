@@ -19,7 +19,7 @@ public class Index {
     private static List<User> crew = new ArrayList<>();
 
     static {
-        crew.add(new User("Serj", "Bobkin"));
+        crew.add(new User("Serg", "Bobkin"));
         crew.add(new User("Elon", "Musk"));
     }
 
@@ -42,21 +42,21 @@ public class Index {
     }
 
     @GetMapping("/signon")
-    public String signonGet(Model model) {
+    public String signon(Model model) {
         AddUser addUser = new AddUser();
-        model.addAttribute(addUser);
+        model.addAttribute("addUser", addUser);
         return "signon";
     }
 
     @PostMapping("/signon")
     public String signonPost(Model model, @ModelAttribute("addUser") AddUser addUser) {
-        String Fname = addUser.getFirstName();
-        String Sname = addUser.getSecondName();
+        String fn = addUser.getFname();
+        String sn = addUser.getSname();
 
-        if (Fname != null && Fname.length() > 0 && Sname != null && Sname.length() > 0) {
-            User user = new User(Fname, Sname);
+        if (fn != null && fn.length() > 0 && sn != null && sn.length() > 0) {
+            User user = new User(fn, sn);
             crew.add(user);
-            model.addAttribute(crew);
+            model.addAttribute("crew", crew);
             return "redirect:/users";
         }
 

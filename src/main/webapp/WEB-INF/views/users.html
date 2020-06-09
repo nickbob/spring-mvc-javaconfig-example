@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>welcome</title>
+    <title>users</title>
     <th:block th:insert="~{app-template :: link}"></th:block>
 </head>
 
 <body>
-    <div th:replace="~{app-template :: app_header}"></div>
-
-    <div th:replace="~{app-template :: users_list}"></div>
-
-    <div th:replace="~{app-template :: footer}"></div>
+    <div class="wrapper">
+        <div th:replace="~{app-template :: app_header}"></div>
+        <div th:replace="~{app-template :: user_list}"></div>
+        <footer th:replace="~{app-template :: footer}"></footer>
+    </div>
 </body>
 
 </html>

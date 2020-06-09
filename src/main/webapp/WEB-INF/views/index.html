@@ -8,16 +8,11 @@
 </head>
 
 <body>
-    <div th:replace="~{app-template :: app_header}"></div>
-
-    <div class="main-content">
-        <br>
-        <h1>welcome</h1>
-        <p th:utext="${welcome}">...</p>
-        <br>
+    <div class="wrapper">
+        <div th:replace="~{app-template :: app_header}"></div>
+        <div th:replace="~{app-template :: welcome}"></div>
+        <footer th:replace="~{app-template :: footer}"></footer>
     </div>
-
-    <div th:replace="~{app-template :: footer}">...</div>
 </body>
 
 </html>
