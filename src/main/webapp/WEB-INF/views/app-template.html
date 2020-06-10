@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8" />
@@ -9,14 +9,13 @@
 
 <body>
     <div th:fragment="app_header" class="header">
-        <a th:href="@{/index}">Home</a> | <a th:href="@{/users}">Users</a> | <a th:href="@{/signon}">Create user</a> | <a th:href="@{/login?logout=true}">Logout</a>
+        <a th:href="@{/index}">Home</a> | <a th:href="@{/users}">Users</a> | <a th:href="@{/signon}">Create user</a> |
+        <a th:href="@{/login?logout=true}">Log out</a>
     </div>
-
     <div th:fragment="welcome" class="main-content">
         <h1>Welcome</h1>
         <p th:utext="${welcome}">...</p>
     </div>
-
     <div th:fragment="user_list" class="main-content">
         <br>
         <table>
@@ -30,46 +29,46 @@
             </tr>
         </table>
     </div>
-
     <div th:fragment="user_create" class="main-content">
         <br>
         <form th:action="@{/signon}" th:object="${addUser}" method="POST">
-            First name:
-            <input type="text" th:field="*{Fname}" />
-            <br>
-            Second name:
-            <input type="text" th:field="*{Sname}" />
-            <br>
-            <input type="submit" value="Create" />
-        </form>
-        <br>
-        <div th:if="${createUserError}" th:utext="${createUserError}" style="color:brown"></div>
-    </div>
-
-    <div th:fragment="app_login" class="main-content">
-        <br>
-        <form th:action="@{/login}" name="login" method="POST">
             <table>
                 <tr>
-                    <td>Username</td>
-                    <td> <input type="text" name="username" value='' /> </td>
+                    <td>First name</td>
+                    <td><input type="text" th:field="*{Fname}" /></td>
                 </tr>
                 <tr>
-                    <td>Password</td>
-                    <td> <input type="password" name="password" /> </td>
+                    <td>Second name</td>
+                    <td><input type="text" th:field="*{Sname}" /></td>
                 </tr>
                 <tr>
-                    <td colspan='2'>
-                        <input type="submit" name="submit" value="Sign In" /></td>
+                    <td colspan="2"><input type="submit" value="Create" /> </td>
                 </tr>
             </table>
         </form>
-        <br>
-        <div th:if="${errorMessage}" th:utext="${errorMessage}" style="color:brown"></div>
+        <div th:if="${createUserError}" th:utext="${createUserError}" style="color: brown"></div>
     </div>
 
-    <footer class="footer">
-        <p align=center>&copy nickbob 2020</p>
+    <div th:fragment="app_login">
+        <form th:action="@{/login}" name="login" method="POST">
+        <table>
+            <tr>
+                <td>Username:</td> <td><input type="text" name="username" value='' /></td>
+            </tr>
+            <tr>
+                <td>Password:</td> <td><input type="password" name="password" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Log in" name="submit" /> </td>
+            </tr>
+        </table>
+        </form>
+        <div th:if="${loginMessage}" th:utext="${loginMessage}" style="color: brown"></div>
+    </div>
+
+
+    <footer>
+        <p align="center">&copy nickbob 2020</p>
     </footer>
 </body>
 

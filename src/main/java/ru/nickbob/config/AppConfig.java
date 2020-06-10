@@ -20,9 +20,9 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @PropertySource("classpath:app.prop")
 public class AppConfig implements WebMvcConfigurer {
 
+    @Autowired
     private ApplicationContext applicationContext;
 
-    @Autowired
     public AppConfig(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }

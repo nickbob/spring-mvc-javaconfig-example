@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.event.GenericApplicationListener;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,15 +42,15 @@ public class Index {
         return "users";
     }
 
-    @GetMapping("/signon")
+    @GetMapping("signon")
     public String signon(Model model) {
         AddUser addUser = new AddUser();
         model.addAttribute("addUser", addUser);
         return "signon";
     }
 
-    @PostMapping("/signon")
-    public String signonPost(Model model, @ModelAttribute("addUser") AddUser addUser) {
+    @PostMapping("signon")
+    public String signonPost(@ModelAttribute("addUser") AddUser addUser, Model model) {
         String fn = addUser.getFname();
         String sn = addUser.getSname();
 
@@ -61,7 +62,6 @@ public class Index {
         }
 
         model.addAttribute("createUserError", createUserError);
-
         return "signon";
     }
 }

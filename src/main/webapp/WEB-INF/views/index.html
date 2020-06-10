@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="www.thymeleaf.org">
-
-<head>
-    <meta charset="utf-8" />
-    <title>welcome</title>
-    <th:block th:insert="~{app-template :: link}"></th:block>
-</head>
-
-<body>
-    <div class="wrapper">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>welcome</title>
+        <th:block th:insert="~{app-template :: link}"></th:block>
+    </head>
+    <body>
+        <div class="wrapper">
         <div th:replace="~{app-template :: app_header}"></div>
         <div th:replace="~{app-template :: welcome}"></div>
-        <footer th:replace="~{app-template :: footer}"></footer>
-    </div>
-</body>
-
+        <div th:replace="~{app-template :: footer}"></div>
+        </div>
+    </body>
 </html>
